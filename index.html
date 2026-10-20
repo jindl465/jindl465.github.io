@@ -56,10 +56,7 @@
       font-family: "Lato", Verdana, Helvetica, sans-serif;
       font-size: 15px; line-height: 1.6;
     }
-    body::before {
-      content: ""; display: block; height: 4px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    }
+    
     a { color: var(--link); text-decoration: none; }
     a:hover, a:focus { color: var(--link-hover); }
     strong, b { font-weight: 700; }
@@ -87,7 +84,7 @@
     .intro-text { flex: 1 1 auto; min-width: 0; }
     .name { font-size: 36px; font-weight: 900; margin: 0; letter-spacing: -.01em; line-height: 1.15; }
     .name .ko { font-weight: 400; color: var(--muted); font-size: .55em; margin-left: 6px; }
-    .tagline { color: var(--accent); font-weight: 700; margin: 6px 0 18px; font-size: 15px; }
+    .tagline { color: var(--muted); font-weight: 700; margin: 6px 0 18px; font-size: 15px; }
     .intro-text p { margin: 0 0 12px; }
     .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; }
     .chip {
@@ -99,11 +96,11 @@
     .chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
     .chip svg { width: 14px; height: 14px; }
     .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-    .tag { font-size: 12.5px; padding: 2px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+    .tag { font-size: 12.5px; padding: 2px 10px; border-radius: 6px; background: var(--bg-soft); color: var(--muted); font-weight: 700; border: 1px solid var(--line); }
     .profile { flex: 0 0 30%; max-width: 30%; }
     .profile img {
       width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; border-radius: 50%;
-      border: 4px solid var(--bg); box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow);
+      box-shadow: var(--shadow);
     }
     @media (max-width: 640px) {
       .intro { flex-direction: column-reverse; gap: 18px; padding-top: 28px; text-align: center; }
@@ -119,8 +116,8 @@
       font-size: 21px; font-weight: 900; margin: 38px 0 14px; letter-spacing: .01em;
     }
     h2::before {
-      content: ""; width: 6px; height: 22px; border-radius: 3px;
-      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      content: ""; width: 4px; height: 20px; border-radius: 2px;
+      background: var(--accent);
     }
     h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
     .section-note { margin: -6px 0 10px; color: var(--muted); font-size: 13.5px; }
@@ -130,7 +127,7 @@
     .news li { display: flex; gap: 14px; align-items: baseline; padding: 5px 0; }
     .news .date {
       flex: 0 0 auto; min-width: 66px; text-align: center; font-size: 12.5px; font-weight: 700;
-      color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 1px 8px;
+      color: var(--muted); background: var(--bg-soft); border-radius: 6px; padding: 1px 8px;
       font-variant-numeric: tabular-nums;
     }
     .new { font-size: 10.5px; font-weight: 900; color: #fff; background: #e5484d; border-radius: 4px; padding: 1px 5px; margin-left: 6px; vertical-align: 1px; letter-spacing: .04em; }
@@ -150,14 +147,14 @@
     }
     .paper-thumb .placeholder {
       aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--accent-soft), var(--bg-soft)); color: var(--muted);
+      background: var(--bg-soft); color: var(--muted);
       font-size: 13px; font-weight: 700;
     }
     .vbadge {
       position: absolute; top: -8px; left: -8px; font-size: 11px; font-weight: 900; letter-spacing: .03em;
-      padding: 2px 8px; border-radius: 6px; color: #fff; background: var(--conf); box-shadow: var(--shadow);
+      padding: 2px 8px; border-radius: 6px; color: #fff; background: var(--text); box-shadow: var(--shadow);
     }
-    .vbadge.j { background: var(--jour); }
+    .vbadge.j { background: var(--text); }
     .paper-body { flex: 1 1 auto; min-width: 0; }
     .papertitle { font-size: 15.5px; font-weight: 700; color: var(--text); line-height: 1.4; }
     a .papertitle { color: var(--link); }
@@ -173,7 +170,7 @@
       border: 1px solid var(--line); background: var(--bg); color: var(--text);
     }
     .btn:hover { border-color: var(--accent); color: var(--accent); }
-    .badge { font-size: 12.5px; font-weight: 700; padding: 2px 10px; border-radius: 6px; background: var(--award-soft); color: var(--award); }
+    .badge { font-size: 12.5px; font-weight: 700; padding: 2px 10px; border-radius: 6px; border: 1px solid var(--line); color: var(--text); }
     .filters { display: flex; gap: 6px; margin: 0 0 14px; flex-wrap: wrap; }
     .filters button {
       font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
@@ -193,14 +190,14 @@
     }
     .exp-logo {
       flex: 0 0 60px; width: 60px; height: 60px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: var(--bg); border: 1px solid var(--line);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 900; color: #fff; font-size: 12px; letter-spacing: .05em;
+      font-weight: 900; color: var(--muted); font-size: 12px; letter-spacing: .05em;
     }
     .exp-body { flex: 1 1 auto; min-width: 0; }
     .exp-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
     .exp-role { font-weight: 900; font-size: 16px; }
-    .exp-date { color: var(--accent); font-weight: 700; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+    .exp-date { color: var(--muted); font-weight: 700; font-size: 13.5px; font-variant-numeric: tabular-nums; }
     .exp-org { color: var(--muted); }
     .exp-body ul { margin: 8px 0 0; padding-left: 18px; }
     .exp-body li { margin: 3px 0; }
@@ -209,7 +206,7 @@
     .timeline { list-style: none; margin: 0; padding: 0 0 0 22px; position: relative; }
     .timeline::before {
       content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px;
-      background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent-2) 30%, transparent));
+      background: var(--line);
       border-radius: 2px;
     }
     .timeline li { position: relative; padding: 6px 0 10px; }
@@ -219,15 +216,15 @@
     }
     .tl-title { display: block; }
     .tl-meta { display: block; color: var(--muted); font-size: 13.5px; }
-    .tl-meta .yr { color: var(--accent); font-weight: 700; }
+    .tl-meta .yr { color: var(--text); font-weight: 700; }
 
     /* ---------- Awards / patents ---------- */
     .awards { list-style: none; padding: 0; margin: 0; }
     .awards li {
       display: flex; gap: 14px; align-items: flex-start; padding: 12px 14px; margin-bottom: 8px;
-      border-radius: 10px; background: var(--bg-soft); border-left: 4px solid var(--award);
+      border-radius: 0; background: transparent; border-bottom: 1px solid var(--line); padding-left: 0; padding-right: 0; margin-bottom: 0;
     }
-    .awards.pat li { border-left-color: var(--accent); }
+    
     .awards .ic { font-size: 18px; line-height: 1.3; }
     .awards .yr { margin-left: auto; color: var(--muted); font-weight: 700; font-size: 13.5px; white-space: nowrap; padding-left: 10px; }
     .awards .sub { display: block; color: var(--muted); font-size: 13.5px; }
@@ -287,7 +284,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
         <a class="chip" href="#">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>CV</a>
-        <a class="chip" href="#">
+        <a class="chip" href="https://scholar.google.com/citations?user=CSbcrNQAAAAJ&amp;hl=en">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-6.5 9.7V16c0 1.9 2.9 4 6.5 4s6.5-2.1 6.5-4v-3.3L12 16.5l-6.5-3.8Z"/></svg>Scholar</a>
         <a class="chip" href="https://github.com/jindl465">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.4-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.1 4.7 18.1 5 18.1 5c.6 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>GitHub</a>
@@ -302,7 +299,7 @@
   <section id="news">
   <h2>News</h2>
   <ul class="news">
-    <li><span class="date">2026.09</span><span><i>MUTE</i> has been accepted to <b>NeurIPS 2026</b>.<span class="new">NEW</span></span></li>
+    <li><span class="date">2026.09</span><span><i>MUTE</i> has been accepted to <b>NeurIPS 2026</b>.</span></li>
     <li><span class="date">2026.06</span><span><i>C³ASD</i> has been accepted to <b>ECCV 2026</b>.</span></li>
     <li><span class="date">2026</span><span>One paper on calibration-free multi-object tracking has been accepted to <b>AVSS 2026</b>.</span></li>
     <li><span class="date">2026.01</span><span><i>DiffMusic</i> has been accepted to <b>IEEE Transactions on Audio, Speech and Language Processing</b>.</span></li>
@@ -318,7 +315,7 @@
   <!-- ======================= Publications ======================= -->
   <section id="publications">
   <h2>Publications</h2>
-  <p class="section-note">* denotes equal contribution. † denotes corresponding author. Highlighted papers are representative.</p>
+  <p class="section-note">* denotes equal contribution. † denotes corresponding author.</p>
   <div class="filters" role="group" aria-label="Filter publications">
     <button data-f="all" aria-pressed="true">All</button>
     <button data-f="conf" aria-pressed="false">Conference</button>
@@ -326,7 +323,7 @@
   </div>
 
   <!-- MUTE -->
-  <div class="paper highlight" data-type="conf">
+  <div class="paper" data-type="conf">
     <div class="paper-thumb"><span class="vbadge">NeurIPS 2026</span>
       <img loading="lazy" alt="MUTE teaser" src="images/mute.png">
     </div>
@@ -343,7 +340,7 @@
   </div>
 
   <!-- C3ASD -->
-  <div class="paper highlight" data-type="conf">
+  <div class="paper" data-type="conf">
     <div class="paper-thumb"><span class="vbadge">ECCV 2026</span>
       <img loading="lazy" alt="C3ASD teaser" src="images/c3asd.png">
     </div>
@@ -361,7 +358,7 @@
   </div>
 
   <!-- DiffMusic T-ASLP -->
-  <div class="paper highlight" data-type="journal">
+  <div class="paper" data-type="journal">
     <div class="paper-thumb"><span class="vbadge j">T-ASLP 2026</span>
       <img loading="lazy" alt="DiffMusic teaser" src="images/diffmusic.png">
     </div>
@@ -407,7 +404,7 @@
   </div>
 
   <!-- AVSS 2025 -->
-  <div class="paper highlight" data-type="conf">
+  <div class="paper" data-type="conf">
     <div class="paper-thumb"><span class="vbadge">AVSS 2025</span>
       <img loading="lazy" alt="ORMOT teaser" src="images/ormot.png">
     </div>
@@ -417,7 +414,7 @@
       <span class="line venue">IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS), Tainan, Taiwan, 2025</span>
       <p class="paper-desc">Keeps identities stable through occlusions by adaptively managing appearance features and compensating for camera motion.</p>
       <div class="paper-links">
-        <span class="badge">🏆 Excellent Paper Award</span>
+        <span class="badge">Excellent Paper Award</span>
         <a class="btn" href="https://ieeexplore.ieee.org/document/11149928">PDF</a>
         <a class="btn" href="https://github.com/jindl465/ORMOT">Code</a>
       </div>
@@ -426,15 +423,14 @@
 
   <!-- ACCV-W 2024 -->
   <div class="paper" data-type="conf">
-    <div class="paper-thumb"><span class="vbadge">ACCV-W 2024</span>
-      <img loading="lazy" alt="diffMusic ACCV-W teaser" src="https://sites.google.com/sitesv-images-rt/AMxu72tn5y7nhPQHKUbuiXQ3JNtnAgqLBauTfBTveurQlXrDqGPHazJfM9CxJrxkc5ljE1a--ypZcMRiCCJmTAup-PP-s-huVz4ppljUJQloLeZaBYLvY4h8tAomyr-cRbsmy228S9E1ABWfU0by6ofXEWt6uA4oT-p0LZ7CDNaDXv6mzND-Wz2Fpn9naVvMxF4S0vrh4sl02f_QuHc54nmPcbtNpszUNG4foCCxruiI=w1280">
+    <div class="paper-thumb"><span class="vbadge">ACCV-W 2024</span><div class="placeholder">Music Generation</div>
     </div>
     <div class="paper-body">
       <span class="papertitle">diffMusic: A Multi-Stage Model for Contextually Aligned Music Generation from Visual Inputs</span>
       <span class="line authors"><strong>Jin Hong</strong>, Taeun Lee, Junseok Kwon†</span>
       <span class="line venue">The 17th Asian Conference on Computer Vision Workshop (ACCV Workshop), Hanoi, Vietnam, 2024</span>
       <p class="paper-desc">A multi-stage pipeline that turns visual inputs into music aligned with the scene's context.</p>
-      <div class="paper-links"><span class="badge">🎤 Oral Presentation</span></div>
+      <div class="paper-links"><span class="badge">Oral Presentation</span></div>
     </div>
   </div>
 
@@ -551,17 +547,14 @@
   <section id="awards">
   <h2>Honors &amp; Awards</h2>
   <ul class="awards">
-    <li><span class="ic">🏆</span>
-      <span><b>Excellent Paper Award</b>, IEEE AVSS 2025
+    <li><span><b>Excellent Paper Award</b>, IEEE AVSS 2025
         <span class="sub">Occlusion-Robust Multi-Object Tracking with Adaptive Feature Management and Motion Compensation</span></span>
       <span class="yr">2025.08</span></li>
-    <li><span class="ic">🥇</span>
-      <span><b>Grand Prize (Minister of Science and ICT Award)</b>, 2021 AI Data Utilization Competition — Track 2: Service Planning
+    <li><span><b>Grand Prize (Minister of Science and ICT Award)</b>, 2021 AI Data Utilization Competition — Track 2: Service Planning
         <span class="sub">Awarded to Handu Inc. for a non-face-to-face AI play-education service for children · hosted by MSIT &amp; NIA ·
           <a href="https://www.etnews.com/20211216000213">News</a></span></span>
       <span class="yr">2021.12</span></li>
-    <li><span class="ic">🎓</span>
-      <span><b>Graduate Research Scholarship</b>, Chung-Ang University</span>
+    <li><span><b>Graduate Research Scholarship</b>, Chung-Ang University</span>
       <span class="yr">2023</span></li>
   </ul>
   </section>
@@ -570,8 +563,7 @@
   <section id="patents">
   <h2>Patents</h2>
   <ul class="awards pat">
-    <li><span class="ic">📄</span>
-      <span><b>Efficient Music Generation Apparatus and Method From a Single Image Using Diffusion-Based Representations</b>
+    <li><span><b>Efficient Music Generation Apparatus and Method From a Single Image Using Diffusion-Based Representations</b>
         <span class="sub"><strong>Jin Hong</strong>, Juhyeon Park, Junseok Kwon · KOR Patent 10-2025-0172827</span></span>
       <span class="yr">2025.11</span></li>
   </ul>
